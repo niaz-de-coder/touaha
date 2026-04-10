@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Touaha Akbar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Hind Siliguri for Bengali -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Hind+Siliguri:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/Mohammed_Touaha_Akbar_Logo.webp" type="image/x-icon">
+</head>
+<body class="text-gray-900 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Site Name -->
+                <div class="flex items-center space-x-3 group cursor-pointer">
+                    <div class="w-10 h-10 overflow-hidden rounded-full border border-gray-100">
+                        <img 
+                            src="assets/Mohammed_Touaha_Akbar_Logo.webp" 
+                            alt="Logo" 
+                            class="w-full h-full object-cover"
+                            onerror="this.src='https://ui-avatars.com/api/?name=MTA&background=f3f4f6&color=333'"
+                        >
+                    </div>
+                    <span class="font-medium tracking-tight text-lg lg:text-xl" id="site-name">
+                        Mohammed Touaha Akbar
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-sm font-medium text-gray-600 hover:text-black" data-en="About" data-bn="সম্পর্কে">About</a>
+                    <a href="#playlist" class="nav-link text-sm font-medium text-gray-600 hover:text-black" data-en="Playlist" data-bn="প্লেলিস্ট">Playlist</a>
+                    <a href="#writings" class="nav-link text-sm font-medium text-gray-600 hover:text-black" data-en="Writings" data-bn="লেখা">Writings</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-gray-600 hover:text-black" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+                    
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" class="flex items-center space-x-2 px-4 py-2 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors text-xs font-semibold tracking-wider">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="lang-text">BN</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Slide-over Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col p-8 md:hidden">
+        <div class="flex justify-end">
+            <button id="close-btn" class="text-gray-600 p-2">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+        </div>
+        
+        <div class="flex flex-col space-y-8 mt-12 items-center text-center">
+            <a href="#about" class="mobile-nav-link text-2xl font-light" data-en="About" data-bn="সম্পর্কে">About</a>
+            <a href="#playlist" class="mobile-nav-link text-2xl font-light" data-en="Playlist" data-bn="প্লেলিস্ট">Playlist</a>
+            <a href="#writings" class="mobile-nav-link text-2xl font-light" data-en="Writings" data-bn="লেখা">Writings</a>
+            <a href="#contact" class="mobile-nav-link text-2xl font-light" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+            
+            <button id="lang-toggle-mobile" class="mt-8 px-8 py-3 bg-black text-white rounded-full text-sm font-medium">
+                Switch to Bengali
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative flex flex-col items-center justify-center pt-8 overflow-hidden bg-[#fcfcfc]">
+        <!-- Background Text -->
+        <div class="mb-32 absolute inset-0 flex items-center justify-center select-none pointer-events-none">
+            <h2 class="text-[9vw] font-bold text-black whitespace-nowrap tracking-tighter uppercase" data-en="As-salamu Alaykum"
+                    data-bn="আসসালামু আলাইকুম">
+                As-salamu Alaykum
+            </h2>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 flex flex-col items-center max-w-4xl px-6 text-center">
+            <!-- Hero Image -->
+            <div class="relative w-64 md:w-80 lg:w-96 mb-4 transform hover:scale-[1.02] transition-transform duration-500">
+                <img 
+                    src="assets/Mohammed_Touaha_Akbar.webp" 
+                    alt="Mohammed Touaha Akbar" 
+                    class="w-full h-auto drop-shadow-2xl transition-all duration-700"
+                >
+            </div>
+
+            <!-- Intro Text -->
+            <div class="mb-4 space-y-2">
+                <p 
+                    id="hero-intro" 
+                    class="text-lg md:text-2lg lg:text-3lg font-light leading-relaxed text-gray-800"
+                    data-en="I want to help you on the path of truth. To make your life at least a little bit easier."
+                    data-bn="আমি চাই সত্যের পথে আপনাকে একটু হেল্প করতে। আপনার জীবনটাকে একটু হলেও সহজ করতে।"
+                >
+                    <b>I want to help you on the path of truth. To make your life at least a little bit easier.</b>
+                </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a 
+                    href="#playlist" 
+                    class="px-10 py-4 border border-black text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 min-w-[180px]"
+                    data-en="Playlist"
+                    data-bn="প্লেলিস্ট"
+                >
+                    Explore Playlist
+                </a>
+                <a 
+                    href="#writings" 
+                    class="px-10 py-4 border border-black text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 min-w-[180px]"
+                    data-en="Writings"
+                    data-bn="লেখা"
+                >
+                    Explore Writings
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- About Image -->
+                <div class="relative order-2 lg:order-1">
+                    <div class="aspect-[4/5] overflow-hidden rounded-2xl grayscale hover:grayscale-0 transition-all duration-700 shadow-sm border border-gray-100">
+                        <img 
+                            src="assets/Mohammed_Touaha_Akbar_About.webp" 
+                            alt="About Mohammed Touaha Akbar" 
+                            class="w-full h-full object-cover object-top"
+                            onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop'"
+                        >
+                    </div>
+                    <!-- Subtle Accent -->
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gray-50 -z-10 rounded-full"></div>
+                </div>
+
+                <!-- About Text -->
+                <div class="order-1 lg:order-2 space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-bold tracking-[0.2em] uppercase text-gray-400" data-en="About Me" data-bn="আমার সম্পর্কে">About Me</h3>
+                        <h2 class="text-3xl md:text-4xl font-light tracking-tight" data-en="A Journey Towards Truth" data-bn="সত্যের পথে এক অভিযাত্রা">A Journey Towards Truth</h2>
+                    </div>
+
+                    <div class="space-y-6 text-gray-600 leading-relaxed font-light text-lg">
+                        <p data-en="I am Mohammed Touaha Akbar. A Genetic Engineer and Biotechnologist by academic identity. Interested in science and research. More interested in teaching. So I have taken teaching as a profession." 
+                           data-bn="আমি মোহাম্মদ তোয়াহা আকবর। একাডেমিক পরিচয়ে জেনেটিক ইঞ্জিনিয়ার এবং একজন বায়োটেকনোলজিস্ট। আগ্রহ বিজ্ঞানে এবং গবেষণায়। তারচেয়েও বেশি আগ্রহ পড়ানোতে। তাই শিক্ষকতাকেই পেশা হিসেবে নিয়েছি।">
+                           I am Mohammed Touaha Akbar. A Genetic Engineer and Biotechnologist by academic identity. Interested in science and research. More interested in teaching. So I have taken teaching as a profession.
+                        </p>
+                        
+                        <p data-en="A devoted Muslim in moral and ideological life. Having left atheism, by the infinite mercy and grace of Allah Subhanahu wa Ta'ala, I was able to recognize the light of Islam and come to this path in 2011." 
+                           data-bn="নৈতিক এবং আদর্শিক জীবনে একজন মনেপ্রাণে মুসলিম। নাস্তিকতা ছেড়ে আল্লাহ সুবহানাহু ওয়া তা’আলার অশেষ করুণা আর দয়ায় ইসলামের আলো চিনে এ পথে আসতে পেরেছি ২০১১ তে।">
+                           A devoted Muslim in moral and ideological life. Having left atheism, by the infinite mercy and grace of Allah Subhanahu wa Ta'ala, I was able to recognize the light of Islam and come to this path in 2011.
+                        </p>
+
+                        <p data-en="Now I am learning. I know I have to cross a long way. Not as an unfortunate person who is too late to gather the provisions for the eternal life, I want to live with the determination of building golden days. Whatever pearls I can gather on this momentary beach are the words in my profit account." 
+                           data-bn="এখন শিখছি। আরো বহু দূর পথ পাড়ি দিতে হবে জানি। অনন্তের জীবনের পাথেয় কুড়োতে বড্ড দেরী করে ফেলা একজন দূর্ভাগা হিসেবে নয়, বাঁচতে চাই সোনালি দিন গড়ার প্রত্যয়ে। ক্ষণিকের বালুবেলায় যে কটা মুক্তো কুড়োতে পারি সেই তো আমার লাভের খাতার শব্দমালা।">
+                           Now I am learning. I know I have to cross a long way. Not as an unfortunate person who is too late to gather the provisions for the eternal life, I want to live with the determination of building golden days. Whatever pearls I can gather on this momentary beach are the words in my profit account.
+                        </p>
+
+                        <p data-en="I have planted a flag here to write and speak about a pearl or two, about insights on the walking path. I will not be here one day. Some of the pearls I found might remain touching generation after generation. Maybe it will be someone's torch of light. And that fire will spread everywhere." 
+                           data-bn="হাঁটার পথে একটা দুটো মুক্তোর কথা, উপলব্ধির কথা লিখবো আর বলবো বলে এখানে পতাকা পুঁতেছি। আমি থাকবোনা একদিন। আমার খুঁজে পাওয়া কিছু মুক্তো হয়তো থেকে যাবে প্রজন্ম ছুঁয়ে প্রজন্মে। হয়তো হবে কারো আলোর মশাল। আর সে আগুন ছড়িয়ে যাবে সবখানে।">
+                           I have planted a flag here to write and speak about a pearl or two, about insights on the walking path. I will not be here one day. Some of the pearls I found might remain touching generation after generation. Maybe it will be someone's torch of light. And that fire will spread everywhere.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

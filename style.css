@@ -1,0 +1,56 @@
+body {
+    font-family: 'Inter', 'Hind Siliguri', sans-serif;
+    background-color: #fcfcfc;
+}
+
+/* Nav Styles */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    bottom: -2px;
+    left: 0;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(100%);
+}
+
+#mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* Hero Section Specifics */
+#hero-intro {
+    /* Smooth height transition for content change */
+    transition: opacity 0.3s ease;
+}
+
+/* Custom Scrollbar for minimalist look */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
