@@ -5,7 +5,8 @@ const langToggle = document.getElementById('lang-toggle');
 const langToggleMobile = document.getElementById('lang-toggle-mobile');
 const langText = document.getElementById('lang-text');
 
-let currentLang = 'EN'; // Default matches HTML initial state
+// 1. Set default to 'BN' because your HTML starts with Bengali text
+let currentLang = 'BN'; 
 
 // Toggle Mobile Menu
 menuBtn.addEventListener('click', () => {
@@ -20,35 +21,37 @@ const closeMenu = () => {
 
 closeBtn.addEventListener('click', closeMenu);
 
-// Language Switch Logic
+// 2. Language Switch Logic
 const updateLanguage = () => {
     const elements = document.querySelectorAll('[data-en]');
     const siteName = document.getElementById('site-name');
-    const heroIntro = document.getElementById('hero-intro');
     
-    // Add fade-out effect during transition
+    // Smooth transition: Fade out
     const allTextElements = [...elements, siteName];
     allTextElements.forEach(el => el.style.opacity = '0');
 
     setTimeout(() => {
-        if (currentLang === 'EN') {
-            // Switch to BN
-            elements.forEach(el => {
-                el.textContent = el.getAttribute('data-bn');
-            });
-            siteName.textContent = "মোহাম্মদ তোয়াহা আকবর";
-            langText.textContent = 'EN';
-            langToggleMobile.textContent = 'Switch to English';
-            currentLang = 'BN';
-        } else {
-            // Switch to EN
+        if (currentLang === 'BN') {
+            // CURRENT is BN -> Switch to EN
             elements.forEach(el => {
                 el.textContent = el.getAttribute('data-en');
             });
             siteName.textContent = "Mohammed Touaha Akbar";
-            langText.textContent = 'BN';
+            
+            // Update button labels to show switch-back option
+            langText.textContent = 'BN'; 
             langToggleMobile.textContent = 'Switch to Bengali';
             currentLang = 'EN';
+        } else {
+            // CURRENT is EN -> Switch to BN
+            elements.forEach(el => {
+                el.textContent = el.getAttribute('data-bn');
+            });
+            siteName.textContent = "মোহাম্মদ তোয়াহা আকবর";
+            
+            langText.textContent = 'EN';
+            langToggleMobile.textContent = 'Switch to English';
+            currentLang = 'BN';
         }
         
         // Fade back in
@@ -71,5 +74,8 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
 // Initialize styles for transitions
 window.onload = () => {
     const elements = document.querySelectorAll('[data-en], #site-name');
-    elements.forEach(el => el.style.transition = 'opacity 0.3s ease');
+    elements.forEach(el => {
+        el.style.transition = 'opacity 0.3s ease';
+        el.style.opacity = '1';
+    });
 };
